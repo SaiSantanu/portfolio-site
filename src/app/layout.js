@@ -14,11 +14,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Sai Santanu Portfolio",
   description: "Personal portfolio of Sai Santanu — Developer & Innovator.",
-  icons: [
-    { rel: "icon", url: "/logo.png", sizes: "32x32" },
-    { rel: "icon", url: "/logo.png", sizes: "16x16" },
-    { rel: "apple-touch-icon", url: "/logo.png", sizes: "180x180" },
-  ],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 
