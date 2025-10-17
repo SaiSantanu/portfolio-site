@@ -15,7 +15,7 @@ export const metadata = {
   title: "Sai Santanu Portfolio",
   description: "Personal portfolio of Sai Santanu — Developer & Innovator.",
   icons: {
-    icon: "/logo.png", // 🔹 this is your favicon (logo in tab)
+    icon: "/pic.jpg", // 🔹 this is your favicon (logo in tab)
   },
 };
 
