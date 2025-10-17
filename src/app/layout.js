@@ -14,10 +14,13 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Sai Santanu Portfolio",
   description: "Personal portfolio of Sai Santanu — Developer & Innovator.",
-  icons: {
-    icon: "/pic.jpg", // 🔹 this is your favicon (logo in tab)
-  },
+  icons: [
+    { rel: "icon", url: "/logo.png", sizes: "32x32" },
+    { rel: "icon", url: "/logo.png", sizes: "16x16" },
+    { rel: "apple-touch-icon", url: "/logo.png", sizes: "180x180" },
+  ],
 };
+
 
 export default function RootLayout({ children }) {
   return (
