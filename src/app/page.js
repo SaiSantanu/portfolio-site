@@ -3,7 +3,7 @@
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import About from "./components/About";
-import RecommendedCourses from "./components/RecommendedCourses";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -25,9 +25,9 @@ export default function Home() {
         <About />
       </section>
 
-      {/* Recommended Courses Section */}
-      <section id="courses">
-        <RecommendedCourses />
+      {/* Certifications Section */}
+      <section id="certifications">
+        <Certifications />
       </section>
 
       {/* Contact Section */}

@@ -45,7 +45,7 @@ const About = () => {
             <ul className="space-y-6 text-gray-300">
               <li className="hover:bg-gray-700 p-4 rounded-lg transition-colors duration-200">
                 <strong className="text-white">C. V Raman Global University</strong> Odisha, India<br />
-                B.Tech in Computer Science (2023 - 2027) — <span className="text-blue-400 font-semibold">CGPA: 7.7</span>
+                B.Tech in Computer Science (2023 - 2027) — <span className="text-blue-400 font-semibold">CGPA: 7.9</span>
               </li>
               <li className="hover:bg-gray-700 p-4 rounded-lg transition-colors duration-200">
                 <strong className="text-white">ITAMATI HIGHER SECONDARY SCHOOL OF EDUCATION & TECHNOLOGY ITAMATI</strong><br />
@@ -67,16 +67,16 @@ const About = () => {
             </h3>
             <ul className="space-y-4 text-gray-300">
               <li className="hover:text-purple-400 transition-colors duration-200">
-                <strong>Frontend:</strong> JavaScript, React, Next.js, TypeScript, Redux, Tailwind, HTML/CSS
+                <strong>Frontend:</strong> JavaScript, React, Next.js, TypeScript, Tailwind, HTML/CSS
               </li>
               <li className="hover:text-pink-400 transition-colors duration-200">
                 <strong>UI Libraries:</strong> Material UI, Bootstrap, Chart.js, Framer Motion, Formik
               </li>
               <li className="hover:text-blue-400 transition-colors duration-200">
-                <strong>Languages:</strong> C++, Python, Java, Go, SQL
+                <strong>Languages:</strong> C, Python, Java, SQL
               </li>
               <li className="hover:text-green-400 transition-colors duration-200">
-                <strong>Tools:</strong> Git/GitHub, Netlify, Vite, Prismic CMS
+                <strong>Tools:</strong> Git/GitHub, Eclipse, Jupyter Notebook, VS Code
               </li>
             </ul>
           </motion.div>
