@@ -11,17 +11,15 @@ const Contact = () => {
     e.preventDefault();
     setStatus("sending");
 
-    const data = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    };
+    const formData = new FormData(e.target);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://formspree.io/f/xeelqbvk", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
@@ -44,7 +42,8 @@ const Contact = () => {
       className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 px-6 flex items-center justify-center"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Side */}
+
+        {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -76,7 +75,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Right Side - Form */}
+        {/* RIGHT SIDE FORM */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: 50 }}
@@ -125,12 +124,14 @@ const Contact = () => {
               ✅ Message sent successfully!
             </p>
           )}
+
           {status === "error" && (
             <p className="text-red-400 text-center">
               ❌ Something went wrong. Try again.
             </p>
           )}
         </motion.form>
+
       </div>
     </section>
   );
