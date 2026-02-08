@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 px-6 flex items-center justify-center"
+      className="min-h-screen text-white py-20 px-6 flex items-center justify-center"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
 

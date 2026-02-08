@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-20 px-6 md:px-20">
+    <section className="min-h-screen text-white py-20 px-6 flex items-center justify-center">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <motion.h2
