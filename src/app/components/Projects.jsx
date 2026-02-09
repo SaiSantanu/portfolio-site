@@ -177,8 +177,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaGithub className="text-2xl group-hover/link:rotate-12 transition-transform" />
-                  <span className="text-sm font-medium">View Code</span>
+                  
                 </motion.a>
               )}
               {project.link && (
@@ -190,8 +189,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FaExternalLinkAlt className="text-xl group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                  <span className="text-sm font-medium">Live Demo</span>
+                  
                 </motion.a>
               )}
             </motion.div>
