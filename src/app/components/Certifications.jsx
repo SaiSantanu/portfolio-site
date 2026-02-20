@@ -63,6 +63,15 @@ const Certifications = () => {
       color: "from-emerald-500/20 to-teal-500/20",
       accentColor: "emerald",
     },
+    {
+      title: "JAVAB (Basic)",
+      issuer: "HackerRank",
+      image: "/HackerRank.png",
+      link: "/java_basic certificate.pdf",
+      color: "from-emerald-500/20 to-teal-500/20",
+      accentColor: "violet",
+
+    }
   ];
 
   // Triple for smoother infinite scroll
