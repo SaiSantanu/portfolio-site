@@ -8,7 +8,6 @@ const projects = [
     title: "CGU Pay Slip Generator",
     description: "Automated payroll management built with Spring Boot and MySQL.",
     tech: ["Spring Boot", "MySQL", "HTML", "Tailwind"],
-    github: "https://github.com/yourrepo",
     image: "/Cgu_pay.png",
     color: "from-violet-500/20 to-fuchsia-500/20",
     accentColor: "violet",
@@ -18,20 +17,19 @@ const projects = [
     description:
       "An accounting and GST consultant management platform that helps businesses handle invoices, clients, and tax filings seamlessly.",
     tech: ["React", "Spring Boot", "MySQL"],
-    github: "https://github.com/yourrepo",
     image: "/ACCount.png",
     color: "from-cyan-500/20 to-blue-500/20",
     accentColor: "cyan",
   },
   {
-    title: "Firebird Line Follower Robot",
-    description: "Arduino-based robot that follows a white line using IR sensors.",
-    tech: ["Arduino", "C++", "Sensors"],
-    image: "/Firebird.jpeg",
-    link: "https://github.com/yourusername/firebird-robot",
-    color: "from-pink-500/20 to-orange-500/20",
-    accentColor: "pink",
-  },
+    title: "Local AI Assistant (Jarvis Style)",
+    description: "A local AI chatbot that runs Large Language Models using Ollama with a React-based terminal UI. Supports voice interaction, real-time streaming responses, and system automation commands to open applications like Chrome, VS Code, and Excel.",
+    tech: ["React", "Node.js", "Ollama", "JavaScript", "Express", "Web Speech API"],
+    image: "/Local-Ai.png",
+    color: "from-yellow-500/20 to-orange-500/20",
+    accentColor: "yellow"
+  }
+
 ];
 
 const ProjectCard = ({ project, index, totalProjects }) => {
@@ -113,7 +111,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
               transition={{ duration: 0.5 }}
               className="inline-block"
             >
-              <span 
+              <span
                 className="text-sm font-bold tracking-[0.3em] uppercase opacity-40"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
@@ -177,7 +175,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  
+
                 </motion.a>
               )}
               {project.link && (
@@ -189,7 +187,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  
+
                 </motion.a>
               )}
             </motion.div>
@@ -249,7 +247,7 @@ export default function ProjectsSection() {
       </div>
 
       {/* Grid pattern overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
@@ -275,14 +273,14 @@ export default function ProjectsSection() {
           >
           </motion.div>
 
-          <h2 
+          <h2
             className="text-6xl lg:text-8xl font-black tracking-tight bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
             PROJECTS
           </h2>
 
-          <p 
+          <p
             className="text-gray-500 max-w-2xl mx-auto text-lg"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
