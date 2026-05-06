@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased bg-gray-900 text-gray-100`}>
+      <body className={`${inter.variable} antialiased bg-black text-white`}>
         {children}
         <SpeedInsights />
       </body>
