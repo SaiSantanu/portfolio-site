@@ -71,7 +71,24 @@ const Certifications = () => {
       color: "from-emerald-500/20 to-teal-500/20",
       accentColor: "violet",
 
+    },
+    {
+      title: "Data Structures & Algorithms (JAVA)",
+      issuer: "Seeding Minds",
+      image: "/Java_DSA.png",
+      link: "/Certificate_OH-31012026-00002.pdf",
+      color: "from-amber-500/20 to-orange-500/20",
+      accentColor: "amber",
+    },
+    {
+      title: "Java Full-Stack",
+      issuer: "Seeding Minds",
+      image: "/Full-Stack.png",
+      link: "/Certificate_OH-06042026-00001.pdf",
+      color: "from-amber-500/20 to-orange-500/20",
+      accentColor: "amber",
     }
+
   ];
 
   // Triple for smoother infinite scroll

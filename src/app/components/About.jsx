@@ -26,7 +26,8 @@ const About = () => {
           viewport={{ once: true }}
           className="text-lg md:text-xl leading-relaxed text-gray-300 mb-16"
         >
-          I'm <span className="text-purple-400 font-semibold">Sai Santanu</span>, a Full Stack Developer & Designer passionate about crafting immersive web experiences. With a strong foundation in Computer Science and a flair for visual storytelling, I specialize in building responsive, accessible, and visually engaging interfaces using modern tools like <span className="text-pink-400 font-semibold">React</span>, <span className="text-blue-400 font-semibold">Next.js</span>, and <span className="text-purple-400 font-semibold">Tailwind CSS</span>.
+          I'm <span className="text-purple-400 font-semibold">Sai Santanu</span>, a Full Stack and AI-focused Software Engineering undergraduate with hands-on experience building scalable web applications and intelligent systems. I specialize in developing robust backend architectures, machine learning solutions, and modern full-stack applications using technologies like <span className="text-green-400 font-semibold">Spring Boot</span>, <span className="text-yellow-400 font-semibold">Python</span>, <span className="text-blue-400 font-semibold">React</span>, <span className="text-cyan-400 font-semibold">Next.js</span>, and <span className="text-purple-400 font-semibold">Tailwind CSS</span>.
+          <br></br>Passionate about solving real-world problems through technology, I focus on creating efficient, scalable, and user-centric digital experiences while combining strong system design principles with clean and accessible interfaces.
         </motion.p>
 
         {/* Grid: Education & Skills */}

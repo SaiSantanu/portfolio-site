@@ -304,7 +304,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
             >
               <motion.a
-                href="/Sai_Santanu_CV.pdf"
+                href="/SAI SANTANU CV.pdf"
                 download
                 className="group relative flex items-center gap-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 text-white px-6 py-2.5 rounded-full font-medium text-sm sm:text-base overflow-hidden shadow-lg shadow-violet-500/25"
                 whileHover={{ scale: 1.05 }}
