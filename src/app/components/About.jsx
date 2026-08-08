@@ -174,7 +174,7 @@ const About = () => {
                   school: "C. V Raman Global University",
                   location: "Odisha, India",
                   degree: "B.Tech in Computer Science (2023–2027)",
-                  grade: "CGPA: 8.24",
+                  grade: "CGPA: 8.2",
                 },
                 {
                   school: "ITAMATI HIGHER SECONDARY SCHOOL",
