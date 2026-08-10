@@ -52,7 +52,7 @@ const Contact = () => {
           className="space-y-6"
         >
           <h2 className="text-5xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
 
           <p className="text-gray-400 text-lg leading-relaxed">

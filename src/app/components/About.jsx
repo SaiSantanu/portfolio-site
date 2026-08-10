@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { label } from "framer-motion/client";
 
 const containerVariants = {
   hidden: {},
@@ -26,6 +27,11 @@ const skillGroups = [
     tags: ["JavaScript", "React", "Next.js", "TypeScript", "Tailwind", "HTML/CSS"],
   },
   {
+    label: "Backend",
+    color: "fuchsia",
+    tags: ["Node.js", "Express.js", "Spring Boot", "Flask", "REST APIs"],
+  },
+  {
     label: "UI Libraries",
     color: "pink",
     tags: ["Material UI", "Bootstrap", "Chart.js", "Framer Motion", "Formik"],
@@ -33,7 +39,7 @@ const skillGroups = [
   {
     label: "Languages",
     color: "cyan",
-    tags: ["C", "Python", "Java", "SQL"],
+    tags: ["C", "C++", "Python", "Java", "SQL"],
   },
   {
     label: "Tools",
@@ -181,6 +187,12 @@ const About = () => {
                   location: "Odisha, India",
                   degree: "Intermediate Science (2019–2021)",
                   grade: "79.19%",
+                },
+                {
+                  school: "Saraswati Vidya Mandir,Nayagarh",
+                  location: "Odisha, India",
+                  degree: "High School Science (2017–2019)",
+                  grade: "75%",
                 },
               ].map((edu, i) => (
                 <motion.div

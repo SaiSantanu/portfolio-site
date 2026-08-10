@@ -5,7 +5,7 @@ import { FaHeart, FaRocket } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-black text-white overflow-hidden">
+    <footer id="footer" className="relative w-full bg-black text-white overflow-hidden">
 
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
