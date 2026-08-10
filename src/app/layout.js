@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Sai Santanu Portfolio",
-  description: "Personal portfolio of Sai Santanu — Developer & Innovator.",
+  title: "Sai Santanu - Software Engineer & Data Analyst",
+  description: "Personal portfolio of Sai Santanu — Software Engineer & Data Analyst.",
   icons: {
     icon: "/favicon.ico",
   },
