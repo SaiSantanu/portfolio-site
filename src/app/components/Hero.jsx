@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import {
   motion,
+  useInView,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -32,6 +33,7 @@ const Hero = () => {
     target: heroRef,
     offset: ["start start", "end end"],
   });
+  const isHeroInView = useInView(heroRef, { amount: 0.01 });
   const navOpacity = useTransform(
     scrollYProgress,
     [0, 0.72, 0.82, 1],
@@ -412,11 +414,11 @@ const Hero = () => {
 
         <motion.nav
           aria-label="Hero navigation"
-          aria-hidden={!isNavVisible}
+          aria-hidden={!isNavVisible || !isHeroInView}
           style={{
-            opacity: navOpacity,
-            x: navX,
-            pointerEvents: isNavVisible ? "auto" : "none",
+            opacity: isHeroInView ? navOpacity : 0,
+            x: isHeroInView ? navX : -72,
+            pointerEvents: isNavVisible && isHeroInView ? "auto" : "none",
           }}
           className="
             fixed
@@ -448,7 +450,7 @@ const Hero = () => {
             download
             aria-label="Download CV PDF"
             title="Download CV PDF"
-            tabIndex={isNavVisible ? 0 : -1}
+            tabIndex={isNavVisible && isHeroInView ? 0 : -1}
             className="
               flex
               h-9
