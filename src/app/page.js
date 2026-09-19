@@ -11,7 +11,7 @@ import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <main>
       <Hero />
       <Projects />
       <ClientProjects />

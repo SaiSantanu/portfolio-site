@@ -9,8 +9,6 @@ const projects = [
     description: "Automated payroll management built with Spring Boot and MySQL.",
     tech: ["Spring Boot", "MySQL", "HTML", "Tailwind"],
     image: "/Cgu_pay.png",
-    color: "from-violet-500/20 to-fuchsia-500/20",
-    accentColor: "violet",
   },
   {
     title: "Quick Account",
@@ -18,33 +16,15 @@ const projects = [
       "An accounting and GST consultant management platform that helps businesses handle invoices, clients, and tax filings seamlessly.",
     tech: ["React", "Spring Boot", "MySQL"],
     image: "/ACCount.png",
-    color: "from-cyan-500/20 to-blue-500/20",
-    accentColor: "cyan",
   },
   {
-    title: "Local AI Assistant (Jarvis Style)",
+    title: "Local AI Assistant",
     description:
-      "A local AI chatbot that runs Large Language Models using Ollama with a React-based terminal UI. Supports voice interaction, real-time streaming responses, and system automation commands to open applications like Chrome, VS Code, and Excel.",
-    tech: ["React", "Node.js", "Ollama", "JavaScript", "Express", "Web Speech API"],
+      "A local AI chatbot that runs Large Language Models using Ollama with a React terminal UI. Supports voice interaction and system automation commands.",
+    tech: ["React", "Node.js", "Ollama", "Express"],
     image: "/Local-Ai.png",
-    color: "from-yellow-500/20 to-orange-500/20",
-    accentColor: "yellow",
   },
 ];
-
-const accentColors = {
-  violet: "group-hover:border-violet-500/50 group-hover:shadow-violet-500/20",
-  cyan: "group-hover:border-cyan-500/50 group-hover:shadow-cyan-500/20",
-  pink: "group-hover:border-pink-500/50 group-hover:shadow-pink-500/20",
-  yellow: "group-hover:border-yellow-500/50 group-hover:shadow-yellow-500/20",
-};
-
-const techColors = {
-  violet: "bg-violet-500/10 text-violet-300 border-violet-500/30",
-  cyan: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
-  pink: "bg-pink-500/10 text-pink-300 border-pink-500/30",
-  yellow: "bg-yellow-500/10 text-yellow-300 border-yellow-500/30",
-};
 
 const ProjectCard = ({ project, index, totalProjects }) => {
   const cardRef = useRef(null);
@@ -55,72 +35,66 @@ const ProjectCard = ({ project, index, totalProjects }) => {
   });
 
   const stackOffset = index * 20;
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.85, 1, 1, 0.95, 0.85]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0.3, 1, 1, 1, 0.3]);
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -50]);
-  const rotateX = useTransform(scrollYProgress, [0, 0.3, 0.5], [15, 5, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.95, 1, 1, 0.98, 0.95]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0.4, 1, 1, 1, 0.4]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -30]);
 
   return (
     <motion.div
       ref={cardRef}
-      style={{ scale, opacity, y, rotateX, top: `${stackOffset}px`, zIndex: totalProjects - index }}
+      style={{ scale, opacity, y, top: `${stackOffset}px`, zIndex: totalProjects - index }}
       className="sticky w-full"
     >
-      <motion.div
-        className={`group relative bg-gradient-to-br from-[#16171D] to-[#0D0E12] rounded-3xl overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 ${accentColors[project.accentColor]}`}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+      <div
+        className="group relative bg-[#0a0a0a]/80 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-white/20"
       >
-        <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+        {/* Subtle hover gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
         <div className="relative flex flex-col lg:flex-row items-center gap-8 p-8 lg:p-12">
           {/* Left Side */}
           <div className="flex-1 z-10 space-y-6">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-block"
             >
               <span
-                className="text-sm font-bold tracking-[0.3em] uppercase opacity-40"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 font-mono"
               >
-                Project {String(index + 1).padStart(2, "0")}
+                0{index + 1}
               </span>
             </motion.div>
 
             <motion.h3
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-black leading-tight"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              className="text-3xl lg:text-5xl font-display font-black leading-tight tracking-tight text-white/90 group-hover:text-white transition-colors"
             >
               {project.title}
             </motion.h3>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-gray-400 leading-relaxed text-lg max-w-lg"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-white/60 leading-relaxed text-base lg:text-lg max-w-lg font-sans"
             >
               {project.description}
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-2"
             >
               {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider border ${techColors[project.accentColor]} backdrop-blur-sm transition-all duration-300 hover:scale-105`}
-                  style={{ fontFamily: "'Space Mono', monospace" }}
+                  className="px-3 py-1.5 rounded-md text-[10px] lg:text-xs font-semibold uppercase tracking-widest bg-white/5 border border-white/10 text-white/70 font-mono transition-colors group-hover:bg-white/10 group-hover:text-white"
                 >
                   {tech}
                 </span>
@@ -128,118 +102,87 @@ const ProjectCard = ({ project, index, totalProjects }) => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex gap-4 pt-4"
+              className="flex gap-6 pt-4"
             >
               {project.github && (
-                <motion.a
+                <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="group/link flex items-center gap-2 text-white/50 hover:text-white transition-colors font-mono text-xs tracking-widest uppercase"
                 >
-                  <FaGithub className="text-lg" />
-                  <span className="text-sm font-medium">GitHub</span>
-                </motion.a>
+                  <FaGithub className="text-sm transition-transform group-hover/link:scale-110" />
+                  <span>Code</span>
+                </a>
               )}
               {project.link && (
-                <motion.a
+                <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="group/link flex items-center gap-2 text-white/50 hover:text-white transition-colors font-mono text-xs tracking-widest uppercase"
                 >
-                  <FaExternalLinkAlt className="text-lg" />
-                  <span className="text-sm font-medium">Live Demo</span>
-                </motion.a>
+                  <FaExternalLinkAlt className="text-sm transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                  <span>Live</span>
+                </a>
               )}
             </motion.div>
           </div>
 
           {/* Right Side - Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex-1 relative group/image"
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-1 w-full relative group/image"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <div className="relative aspect-[4/3] lg:aspect-[16/10]">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#050505]">
+              <div className="relative aspect-[16/10] w-full">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/image:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition-all duration-700 group-hover/image:scale-105 group-hover/image:opacity-100"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover/image:opacity-100 transition-opacity duration-500`} />
               </div>
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500" />
             </div>
-
-            <motion.div
-              className="absolute -bottom-4 -right-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-xl"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <span className="text-sm font-bold text-white/90">{project.tech[0]}</span>
-            </motion.div>
           </motion.div>
         </div>
-
-        <div className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r ${project.color} opacity-50`} />
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
 
 export default function ProjectsSection() {
   return (
-    <section id="work" className="relative py-32 bg-black text-white overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
-      </div>
-
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 mb-20">
+    <section id="work" className="relative py-12 lg:py-16  text-white overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 mb-16 lg:mb-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
+          className="space-y-6 max-w-3xl"
         >
-          <h2
-            className="text-6xl lg:text-8xl font-black tracking-tight bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent"
-            style={{ fontFamily: "'Syne', sans-serif" }}
-          >
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+              Selected Work
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
+          </div>
+          <h2 className="text-5xl lg:text-7xl font-display font-black tracking-tighter text-white">
             PROJECTS
           </h2>
-          <p
-            className="text-gray-500 max-w-2xl mx-auto text-lg"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            A curated selection of work showcasing innovative solutions and creative problem-solving
+          <p className="text-white/50 text-lg lg:text-xl font-sans leading-relaxed">
+            A curated selection of work showcasing scalable architectures and intuitive interfaces.
           </p>
         </motion.div>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        <div className="space-y-8">
+        <div className="space-y-12 lg:space-y-24">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -249,7 +192,6 @@ export default function ProjectsSection() {
             />
           ))}
         </div>
-        <div className="h-[40vh]" />
       </div>
     </section>
   );
